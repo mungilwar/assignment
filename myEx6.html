@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>my marklist</title>
+	<script>src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"</script>
+<script>src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"</script>
+</head>
+<body>
+
+
+<div ng-controller"myCtrl">
+<table border="4">
+<tr>
+	<td>enter firstname:</td><td><input type="text" ng-model="student.name"></td><br><br>
+
+	<td>enter surname:</td><td><input type="text" ng-model="student.surname"></td><br><br>
+	<td>enter marks:</td><td><input type="text" ng-model="student.marks"></td><br><br>
+	<td>enter aggregate:</td><td><input type="text" ng-model="student.aggregate"></td><br><br>
+
+
+</tr>
+</table>
+<br>
+ <table border="0">
+ <tr><td>name in uppercasre:</td><td>{{student.name | uppercase}} </td></tr>
+ <tr><td>surname in uppercasre:</td><td>{{student.surname | uppercase}} </td></tr>
+ <tr><td>subject</td></tr>
+
+
+
+<ul>
+	
+<li ng-repeat="sub in student.subjects | filter:subjectName | order by:'marks'">
+
+
+{{subject.name+'marks:'+subject.marks}}
+</li>
+
+
+
+
+
+</ul>
+
+
+</td></tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>   
+    var myApp=angular.module("myApp",[])
+
+    myApp.controller("myCtrl",function($scope){
+          
+           $scope.firstName="nitin",
+           $scope.lastName="mungilwar"
+           $scope.fullName=function(firstName,lastName){
+
+                           
+
+                return fullName.firstName+""+fullName.lastName;
+                                     }
+
+            $scope.student={
+             
+                  name:"nitin",
+                  surname:"naigaonkar"
+                  marks:80,
+                  aggregate:80
+
+
+
+
+            },
+
+            subjects:[
+
+                  {name:'physics',marks:70},{name:'chemistry',marks:80},{name:'math',marks:90}
+
+            ]
+            
+
+
+    });
+
+</script>
+</body>
+</html>

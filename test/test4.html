@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>new example</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="" ng-controller="studentcontroller">
+
+firstname:<input type="text" ng-model="firstname">
+lastname:<input type="text" ng-model="lastname">
+
+
+you entered is:{{student.firstname+""+student.lastname}}
+
+
+
+</div>
+
+<script>
+	
+   function studentcontroller($scope) {
+   	// body..
+   	   $scope.student={
+                           
+             firstname:"nitin",
+             lastname:"mungilwar",
+   }
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

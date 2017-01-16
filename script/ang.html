@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app = "myFirstapp">
+<head>
+	<title> my first angular js</title>
+<script  type="text/javascript" src="angular.min.js"> 
+	
+</script>
+
+</head>
+<body>
+<h1>hello angular</h1>
+<label>Name:</label>
+<input type="text" ng-model="firstname"  name=""/>
+{{ name }}
+
+<div ng-controller="myFirstcontroller">  {{myname}} ,{{lastname}} </div>
+</body>
+</html>
+
+<script>
+	 (function(){
+
+        angular.module("myfirstapp",[])
+                .controller("myfirstcontroller",myFirstcontroller);
+
+
+                function myFirstcontroller= ($scope){
+
+                     $scope.myName="sohan";
+                     $scope.lastName="pathak"
+
+                };
+
+
+
+
+	 }) ();
+
+
+
+
+
+</script>

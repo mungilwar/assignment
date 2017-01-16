@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app = "myFirstapp">
+<head>
+	<title> my first angular js</title>
+<script  type="text/javascript" src="angular.min.js"> 
+	
+</script>
+
+</head>
+<body>
+<h1>hello angular</h1>
+<label>Num1</label>
+<label>Num1</label>
+<input type="number" ng-model=""  num1=""/>
+{{ number1 }}
+
+<input type="number" ng-model=""  num2=""/>
+{{ number1 }}
+
+{{number1+number2}}
+
+<div ng-controller="myExamplecnt"> {{ number1 }},{{number2}}</div>
+</body>
+
+</body>
+</html>
+
+
+<script>
+
+    (function (){
+
+        angular.module("myExample",[])
+                .controller("myExamplecnt",myExamplecnt);
+
+
+                function myExamplecnt= ($scope){
+
+                     $scope.num1="10";
+                     $scope.num2="20";
+                      $scope.result=$scope.num1+$scope.num2;
+                };
+
+
+
+
+
+
+    })();
+
+
+
+
+</script>

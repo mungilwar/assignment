@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<body ng-app>
+<label> num1</label>
+<input type="number" ng-model="num1" />
+{{ num1 }} <br/>
+
+<label> num1</label>
+<input type="number" ng-model="num2" />
+{{ num2 }}<br/>
+
+{{ num1+num2 }}
+
+
+<script  type="text/javascript" src="angular.min.js"> 
+	
+</script>
+</body>
+</html>
+
+<script>
+	
+
+
+
+	 (function(){
+
+        angular.module("myfirstapp",[])
+                .controller("myfirstcontroller",myFirstcontroller);
+
+
+                function myFirstcontroller= ($scope){
+
+                     $scope.myName="sohan";
+                     $scope.lastName="pathak"
+
+                };
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+	<title>filter demo</title>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+</head>
+
+<body ng-init=customers="[{name:'nitin',city:'pune'},{name:'vaibhav',city:'parbhani'}]">
+
+names:<input type="text" ng-model="customers.name">{{customers.name}}
+<br>
+
+<ul>
+	
+
+<li ng-repeat="cust in customers":{{cust.name}}</li>
+
+</ul>
+
+</body>
+</html>

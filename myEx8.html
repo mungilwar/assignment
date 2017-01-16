@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="myCtrl">
+	name:<input type="text" ng-model="customer.name">
+
+	{{customer.name}}
+
+ 	city:<input type="text" ng-model="customer.city">
+
+ 	{{customer.city}}
+    <my-dir dircustomers="customers" custname="{{customer.name}}"></my-dir>
+
+    
+
+</div>
+
+
+
+
+
+<script>
+
+var myApp=angular.module("myApp",[]);
+myApp.controller("myCtrl",function($scope){
+$scope.customer = {};
+console.log($scope)
+$scope.customer.name = "sohan";
+$scope.customers=[
+
+    {name:"nitin", city:"pune"},
+    {name:"omsai" , city:"nanded"},
+    {name:"omsai" , city:"nanded"},
+    {name:"omsai" , city:"nanded"},
+    {name:"omsai" , city:"nanded"},
+    {name:"omsai" , city:"nanded"},
+    {name:"omsai" , city:"nanded"},
+    {name:"omsai" , city:"nanded"},
+    {name:"omsai" , city:"nanded"}
+
+
+];
+
+});
+
+
+
+
+myApp.controller("studentctrl",function($scope){
+console.log($scope)
+  $scope.student={
+         age:30;
+         marks:80;
+         subject:[
+
+                {name:physics,marks:70},
+                {name:chemistry,marks:80}
+
+         ]
+  }
+});
+
+
+myApp.directive("myDir",function(){
+
+return {
+
+   restrict:"EA",
+   scope: {
+    dircustomers:"=",
+    custname:"@"
+   },
+   transclude:true,
+   template:'<p>{{dircustomers}}   {{custname}}</p>'
+
+   
+}
+});
+
+
+</script>
+</body>
+</html>
